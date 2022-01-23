@@ -72,7 +72,7 @@ Resources:
         Enabled: true
         HttpVersion: http2
         Origins:
-          - DomainName: !GetAtt "S3Bucket.DomainName"
+          - DomainName: !GetAtt "S3Bucket.WebsiteURL"
             Id: s3origin
             S3OriginConfig:
               OriginAccessIdentity: !Sub "origin-access-identity/cloudfront/${CloudFrontOriginAccessIdentity}"
