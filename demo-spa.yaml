@@ -28,10 +28,6 @@ Resources:
             Resource: !Sub "arn:aws:s3:::${S3Bucket}/*"
             Principal:
               AWS: !Sub 'arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity ${CloudFrontOriginAccessIdentity}'
-            # In an ideal scenario the policy would only grant these rights to CloudFront,
-            # we do not do it from scratch as many projects start without having a domain name specified
-            # and we want to test the code as soon as possible.
-            # Principal: CanonicalUser: !GetAtt CloudFrontOriginAccessIdentity.S3CanonicalUserId
           - Action: "s3:PutObject"
             Effect: Allow
             Resource: !Sub "arn:aws:s3:::${S3Bucket}/*"
