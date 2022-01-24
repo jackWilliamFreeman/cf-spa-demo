@@ -16,7 +16,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ap-southeast-2
     - name: run cf template
-      run: aws cloudformation deploy --template-file demo-spa.yaml --stack-name resume-spa-cf --parameter-overrides BucketName=${{ secrets.AWS_S3_BUCKET }} --capabilities CAPABILITY_NAMED_IAM 
+      run: aws cloudformation deploy --template-file demo-spa.yaml --stack-name resume-spa-cf --parameter-overrides BucketName=${{ secrets.AWS_S3_BUCKET_NAME }} --capabilities CAPABILITY_NAMED_IAM 
     - name: Deploy index S3
       run: aws s3 cp ui/index.html ${{ secrets.AWS_S3_BUCKET }}
     - name: Deploy css
