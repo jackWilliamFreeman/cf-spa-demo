@@ -79,7 +79,7 @@ Resources:
               OriginAccessIdentity: !Sub "origin-access-identity/cloudfront/${CloudFrontOriginAccessIdentity}"
         PriceClass: "PriceClass_All"
 
-  # Create an IAM user with Access Keys to enable automated deployment of the website to this bucket
+  # Create an IAM user with Access Keys to enable automated deployment of the website to this bucket s
   PublishUser:
     Type: "AWS::IAM::User"
     Properties:
