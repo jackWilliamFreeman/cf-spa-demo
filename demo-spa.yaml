@@ -32,6 +32,10 @@ Resources:
             # we do not do it from scratch as many projects start without having a domain name specified
             # and we want to test the code as soon as possible.
             # Principal: CanonicalUser: !GetAtt CloudFrontOriginAccessIdentity.S3CanonicalUserId
+          - Action: "s3:PutObject"
+            Effect: Allow
+            Resource: !Sub "arn:aws:s3:::${S3Bucket}/*"
+            Principal: "*"
 
   # Configure Access to CloudFroun
   CloudFrontOriginAccessIdentity:
